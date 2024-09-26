@@ -1,19 +1,19 @@
-typedef int TypeStackItem;
+typedef int StackItemType;
 
 const int MAX_ITEMS = 5;
 
 class Stack {
 private:
   int stackLength;
-  TypeStackItem *stackStructure = nullptr;
+  StackItemType *stackStructure = nullptr;
 
 public:
   Stack();
   ~Stack();
 
-  void insert(TypeStackItem item);
+  void insert(StackItemType item);
   void print();
-  TypeStackItem remove();
+  StackItemType remove();
   bool isFull();
   bool isEmpty();
   int lenght();

@@ -6,7 +6,7 @@ using namespace std;
 int main() {
   Stack stack;
 
-  TypeStackItem item;
+  StackItemType item;
   int choice = 0;
 
   do {

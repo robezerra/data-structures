@@ -5,14 +5,14 @@ using namespace std;
 
 Stack::Stack() {
   stackLength = 0;
-  stackStructure = new TypeStackItem[MAX_ITEMS];
+  stackStructure = new StackItemType[MAX_ITEMS];
 }
 
 Stack::~Stack() {
   delete[] stackStructure;
 }
 
-void Stack::insert(TypeStackItem item) {
+void Stack::insert(StackItemType item) {
   if (isFull()) {
     cout << "Stack is already full" << endl;
   } else {
@@ -22,7 +22,7 @@ void Stack::insert(TypeStackItem item) {
   }
 }
 
-TypeStackItem Stack::remove() {
+StackItemType Stack::remove() {
   if (stackLength > 0) {
     --stackLength;
     return stackStructure[stackLength];
@@ -42,7 +42,6 @@ void Stack::print() {
     }
 
     cout << "]" << endl;
-    ;
   } else {
     cout << "There are no items in the stack" << endl;
   }
