@@ -11,8 +11,8 @@ int main() {
 
   do {
     cout << "Type 0 to quit" << endl;
-    cout << "Type 1 to add one item" << endl;
-    cout << "Type 2 to remove one item" << endl;
+    cout << "Type 1 to add a item" << endl;
+    cout << "Type 2 to remove a item" << endl;
     cout << "Type 3 to print the element at the front node" << endl;
     cout << "Type 4 to print the element at the back node" << endl;
     cout << "Type 5 to print all elements of the queue" << endl;
