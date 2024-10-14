@@ -4,14 +4,14 @@
 using namespace std;
 
 DynamicStack::DynamicStack() {
-  TopNode = nullptr;
+  topNode = nullptr;
 }
 
 DynamicStack::~DynamicStack() {
-  while (TopNode != nullptr) {
-    Node *TempNode = TopNode;
+  while (topNode != nullptr) {
+    Node *TempNode = topNode;
 
-    TopNode = TopNode->next;
+    topNode = topNode->next;
 
     delete TempNode;
   }
@@ -24,9 +24,9 @@ void DynamicStack::insert(DynamicStackItemType content) {
     Node *NewNode = new Node;
 
     NewNode->content = content;
-    NewNode->next = TopNode;
+    NewNode->next = topNode;
 
-    TopNode = NewNode;
+    topNode = NewNode;
   }
 }
 
@@ -34,9 +34,9 @@ DynamicStackItemType DynamicStack::remove() {
   if (isEmpty()) {
     cout << "Dynamic stack is empty";
   } else {
-    DynamicStackItemType content = TopNode->content;
-    Node *TempNode = TopNode;
-    TopNode = TopNode->next;
+    DynamicStackItemType content = topNode->content;
+    Node *TempNode = topNode;
+    topNode = topNode->next;
 
     delete TempNode;
 
@@ -57,14 +57,14 @@ bool DynamicStack::isFull() {
 }
 
 bool DynamicStack::isEmpty() {
-  return TopNode == nullptr;
+  return topNode == nullptr;
 }
 
 void DynamicStack::print() {
   if (isEmpty()) {
 
   } else {
-    Node *TempNode = TopNode;
+    Node *TempNode = topNode;
 
     cout << "[ ";
 

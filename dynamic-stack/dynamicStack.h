@@ -9,7 +9,7 @@ struct Node {
 
 class DynamicStack {
 private:
-  Node *TopNode;
+  Node *topNode;
 
 public:
   DynamicStack();
