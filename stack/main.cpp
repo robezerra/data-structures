@@ -7,16 +7,16 @@ int main() {
   Stack stack;
   StackItemType item;
 
-  int choice = 0;
+  int userChoice = 0;
 
   do {
     cout << "Type 0 to quit" << endl;
     cout << "Type 1 to add a item" << endl;
     cout << "Type 2 to remove a item" << endl;
     cout << "Type 3 to print the stack" << endl;
-    cin >> choice;
+    cin >> userChoice;
 
-    switch (choice) {
+    switch (userChoice) {
     case 1:
       cout << "Insert a number: " << endl;
       cin >> item;
@@ -35,7 +35,7 @@ int main() {
     default:
       break;
     }
-  } while (choice != 0);
+  } while (userChoice != 0);
 
   return 0;
 }

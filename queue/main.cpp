@@ -7,7 +7,7 @@ int main() {
   Queue queue;
 
   QueueItemType item;
-  int choice = 0;
+  int userChoice = 0;
 
   do {
     cout << "Type 0 to quit" << endl;
@@ -16,9 +16,9 @@ int main() {
     cout << "Type 3 to print the element at the front node" << endl;
     cout << "Type 4 to print the element at the back node" << endl;
     cout << "Type 5 to print all elements of the queue" << endl;
-    cin >> choice;
+    cin >> userChoice;
 
-    switch (choice) {
+    switch (userChoice) {
     case 1:
       cout << "Insert a number: " << endl;
       cin >> item;
@@ -45,7 +45,7 @@ int main() {
     default:
       break;
     }
-  } while (choice != 0);
+  } while (userChoice != 0);
 
   return 0;
 }
