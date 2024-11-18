@@ -1,47 +1,24 @@
-#include "hash.h"
+#include "binarySearchTree.h"
 #include <iostream>
 
 using namespace std;
 
 int main() {
-  Student student(-1, " ");
+  BST bst;
+  Student student;
 
   int userChoice, studentCode;
   string studentName;
   bool isFind;
-
-  int hashTableSize, hashTableMaxSize;
-
-  do {
-    cout << "Type the max size of the hash table\n";
-    cin >> hashTableMaxSize;
-
-    if (hashTableSize < 2) {
-      cout << "Hash table size should be greater than 1\n";
-    }
-  } while (hashTableSize < 2);
-
-  do {
-    cout << "Type the size of the hash table\n";
-    cin >> hashTableSize;
-
-    if (hashTableSize >= hashTableMaxSize) {
-      cout << "Hash table size should be less than max size\n";
-    }
-  } while (hashTableSize >= hashTableMaxSize);
-
-  cout
-      << "The load factor is: " << (float)hashTableMaxSize / (float)hashTableSize << endl;
-
-  Hash hashTable(hashTableSize, hashTableMaxSize);
 
   do {
     cout << "Type 0 to quit\n";
     cout << "Type 1 to add an item\n";
     cout << "Type 2 to pop an item\n";
     cout << "Type 3 to search an item\n";
-    cout << "Type 4 to print the hash table\n";
+    cout << "Type 4 to print the BST\n";
     cin >> userChoice;
+
     switch (userChoice) {
     case 1:
       cout << "Insert the student code:\n";
@@ -50,7 +27,8 @@ int main() {
       cin >> studentName;
 
       student = Student(studentCode, studentName);
-      hashTable.push(student);
+      bst.push(student);
+
       break;
     case 2:
       cout << "Insert the student code:\n";
@@ -60,7 +38,7 @@ int main() {
 
       student = Student(studentCode, studentName);
 
-      hashTable.pop(student);
+      bst.pop(student);
 
       break;
     case 3:
@@ -72,11 +50,11 @@ int main() {
 
       student = Student(studentCode, studentName);
 
-      hashTable.search(student, isFind);
+      bst.search(student);
 
       if (isFind) {
         cout << "Student found:\n";
-        cout << "Code: " << student.getCode() << endl;
+        cout << "ID: " << student.getCode() << endl;
         cout << "Name: " << student.getName() << endl;
       } else {
         cout << "Student not found\n";
@@ -84,7 +62,22 @@ int main() {
 
       break;
     case 4:
-      hashTable.print();
+      int printChoice;
+
+      cout << "Type 0 to print in pre order\n";
+      cout << "Type 1 to print in order\n";
+      cout << "Type 2 to print in post order\n";
+      cin >> printChoice;
+
+      if (printChoice == 0) {
+        bst.preOrder(bst.getRoot());
+      } else if (printChoice == 1) {
+        bst.inOrder(bst.getRoot());
+      } else {
+        bst.postOrder(bst.getRoot());
+      }
+
+      break;
     }
   } while (userChoice != 0);
 

@@ -12,7 +12,7 @@ int main() {
   do {
     cout << "Type 0 to quit" << endl;
     cout << "Type 1 to add a item" << endl;
-    cout << "Type 2 to remove a item" << endl;
+    cout << "Type 2 to pop a item" << endl;
     cout << "Type 3 to print the stack" << endl;
     cin >> userChoice;
 
@@ -20,12 +20,12 @@ int main() {
     case 1:
       cout << "Insert a number: " << endl;
       cin >> item;
-      stack.insert(item);
+      stack.push(item);
 
       break;
 
     case 2:
-      stack.remove();
+      stack.pop();
 
       break;
     case 3:

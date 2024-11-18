@@ -17,7 +17,7 @@ DynamicStack::~DynamicStack() {
   }
 }
 
-void DynamicStack::insert(DynamicStackItemType content) {
+void DynamicStack::push(DynamicStackItemType content) {
   if (isFull()) {
     cout << "Memory is full";
   } else {
@@ -30,7 +30,7 @@ void DynamicStack::insert(DynamicStackItemType content) {
   }
 }
 
-DynamicStackItemType DynamicStack::remove() {
+DynamicStackItemType DynamicStack::pop() {
   if (isEmpty()) {
     cout << "Dynamic stack is empty";
   } else {

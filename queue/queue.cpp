@@ -25,7 +25,7 @@ void Queue::enqueue(QueueItemType item) {
 
 void Queue::dequeue() {
   if (isEmpty()) {
-    cout << "There are no items to remove" << endl;
+    cout << "There are no items to pop" << endl;
   } else {
     front++;
 

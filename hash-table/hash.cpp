@@ -17,7 +17,7 @@ int Hash::hashFunction(Student student) {
   return student.getCode() % MAX_SIZE;
 }
 
-void Hash::insert(Student student) {
+void Hash::push(Student student) {
   if (!isFull()) {
     int position = hashFunction(student);
 
@@ -32,7 +32,7 @@ void Hash::insert(Student student) {
   }
 }
 
-void Hash::remove(Student student) {
+void Hash::pop(Student student) {
   bool isDeleted = false;
 
   if (itemsQuantity > 0) {

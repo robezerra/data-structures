@@ -15,8 +15,8 @@ public:
   DynamicStack();
   ~DynamicStack();
 
-  void insert(DynamicStackItemType item);
-  DynamicStackItemType remove();
+  void push(DynamicStackItemType item);
+  DynamicStackItemType pop();
   bool isFull();
   bool isEmpty();
   void print();
